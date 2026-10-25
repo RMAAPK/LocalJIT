@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  polywarp-server:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: polywarp-vault-server
+    restart: unless-stopped
+    ports:
+      - "7470:7470"   # PolyWarp RPC / REST endpoint
+    environment:
+      - PORT=7470
+      - STORAGE_PATH=/data/vault
+      - LOG_LEVEL=info
+      - REQUIRE_API_KEY=false
+    volumes:
+      - polywarp_vault_data:/data/vault
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7470/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  polywarp_vault_data:

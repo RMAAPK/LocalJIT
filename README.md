@@ -36,7 +36,21 @@ Valve built a closed-source, centralized shader cache exclusively for Steam. **P
 
 ---
 
-## 📁 Repository Structure
+## 🛡️ Architecture Model: Self-Hosted & Zero-Knowledge (Ente/Bitwarden Model)
+
+To avoid corporate legal entanglements and copyright claims surrounding game shaders and proprietary binary translation:
+- **Zero-Knowledge Storage:** PolyWarp operates on content-addressed cryptographic hashes (CIDs). The server stores arbitrary encrypted byte arrays and has zero visibility into whether an artifact is a game shader, machine code, or sensor data.
+- **Self-Hostable First:** Users, gaming communities, or private LAN clubs run their own PolyWarp Vault server (`docker compose up -d`).
+- **No Central Liability:** The PolyWarp core client connects to whatever private endpoint the user configures (`http://localhost:7470` or private VPS), insulating the project maintainers from third-party hosting liabilities.
+
+### Quickstart: Self-Hosted Vault Server
+```bash
+cd deploy
+docker compose up -d
+```
+The server will be live on `http://localhost:7470` ready to store and serve pre-compiled artifacts to your local network.
+
+---
 
 ```text
 PolyWarp/
