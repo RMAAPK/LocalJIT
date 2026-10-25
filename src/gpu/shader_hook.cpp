@@ -38,3 +38,4 @@ void GPUEngine::CacheShader(const ShaderArtifact& artifact) {
 }
 
 } // namespace PolyWarp
+

@@ -72,3 +72,4 @@ g++ -std=c++20 -O3 -Iinclude src/cpu/*.cpp src/gpu/*.cpp src/ipfs/*.cpp src/main
 
 ## 📜 License
 PolyWarp is open source software released under the [MIT License](LICENSE).
+

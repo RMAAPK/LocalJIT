@@ -32,3 +32,4 @@ enable_testing()
 add_executable(test_cpu tests/test_cpu_translation.cpp)
 target_link_libraries(test_cpu PRIVATE polywarp_core pthread)
 add_test(NAME TestCPU COMMAND test_cpu)
+
