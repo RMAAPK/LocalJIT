@@ -10,6 +10,8 @@ namespace PolyWarp {
 enum class NetworkTier {
     LOCAL_CACHE,    // L1 / SQLite RAM cache
     BLE_MESH,       // TrackOn airgapped 2.4 GHz radio transport (0x4C5D)
+    LORA_LONG_RANGE,// Sub-GHz LoRa (433/868/915 MHz) for 10-15km long-range hops
+    FM_RDS_BURST,   // VHF FM Broadcast subcarrier (64-108 MHz RDS/RBDS) 1187.5 bps
     INTERNET_IPFS   // Public/Private IPFS Gateway / Web P2P Swarm
 };
 
@@ -28,14 +30,16 @@ public:
     );
     ~MultiTierMeshRouter();
 
-    // Query across tiers: Local -> BLE Mesh -> Internet IPFS
+    // Query across tiers: Local -> BLE Mesh -> LoRa -> FM RDS -> Internet IPFS
     std::optional<std::vector<uint8_t>> ResolveArtifact(const std::string& cid);
 
-    // Ingest and broadcast an artifact: Stored locally, advertised over BLE if <= 31B, published to IPFS
+    // Ingest and broadcast an artifact according to size constraints across tiers
     bool DistributeArtifact(const std::string& cid, const std::vector<uint8_t>& data);
 
-    // Check BLE radio sync state from TrackOn
+    // Physical Radio Layer Transports
     bool SyncWithTrackOnBLE();
+    bool TransmitLoRaPacket(const std::vector<uint8_t>& packet);
+    bool BroadcastFMRDS(const std::vector<uint8_t>& packet);
 
 private:
     std::string m_trackon_chat_db;
