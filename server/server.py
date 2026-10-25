@@ -38,7 +38,7 @@ class VaultHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == "/health":
-            self._send_json(200, {"status": "ok", "service": "polywarp-vault"})
+            self._send_json(200, {"status": "ok", "service": "local-jit"})
             return
 
         # Fetch artifact by CID: /v1/artifact/<cid>
