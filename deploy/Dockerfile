@@ -13,3 +13,4 @@ ENV STORAGE_PATH=/data/vault
 EXPOSE 7470
 
 CMD ["python3", "-u", "/app/server/server.py"]
+

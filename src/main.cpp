@@ -9,8 +9,8 @@ using namespace PolyWarp;
 
 int main(int argc, char** argv) {
     std::cout << "========================================================\n";
-    std::cout << "  PolyWarp: A P2P JIT (Decentralized Swarm Cache v1.0)\n";
-    std::cout << "  Multi-Tier: Local | BLE Mesh | LoRa | FM RDS | P2P\n";
+    std::cout << "  Local JIT: Self-Hosted & P2P Compilation Cache v1.0\n";
+    std::cout << "  Maintained by RMAA Holdings | Target: x86_64 / Mesa\n";
     std::cout << "========================================================\n\n";
 
     CPUEngine cpu;
