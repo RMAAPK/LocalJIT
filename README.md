@@ -1,27 +1,38 @@
-# PolyWarp: Decentralized Cross-Architecture Execution Engine
+# PolyWarp: A P2P JIT
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Target: x86__64](https://img.shields.io/badge/Target-Intel%20x86__64%20Bare--Metal-red.svg)]()
 [![Graphics: Mesa 4.5](https://img.shields.io/badge/Graphics-OpenGL%204.5%20%2F%20DirectX-green.svg)]()
-[![P2P: IPFS Swarm](https://img.shields.io/badge/Vault-IPFS%20Content--Addressed-teal.svg)]()
+[![P2P: Swarm Cache](https://img.shields.io/badge/Swarm-P2P%20Content--Addressed%20JIT-teal.svg)]()
 
-**PolyWarp** is a high-performance cross-architecture binary and graphics execution engine. It combines bare-metal CPU translation (e.g. ARM64 to native x86_64) and DirectX-to-OpenGL shader interception with a decentralized, content-addressed IPFS cache vault.
+**PolyWarp** is a decentralized, peer-to-peer compilation cache and JIT engine (`P2P JIT`). It crowdsources pre-compiled CPU translation blocks and GPU shader pipelines across a decentralized swarm, eliminating runtime compilation stutter for emulators, gaming on Linux, and cross-architecture workloads.
+
+---
+
+## ⚡ The Core Problem: Compilation Stutter
+Every time an emulator (PCSX2, RPCS3, Cemu) or translation layer (Wine/DXVK) encounters new machine code or DirectX shader bytecode, it must pause execution to compile it for your local GPU/CPU. 
+
+Valve built a closed-source, centralized shader cache exclusively for Steam. **PolyWarp** turns this into an open, serverless **P2P JIT**:
+- **Compile Once, Share with the Swarm:** When Node A compiles a shader or basic block on their AMD or Intel silicon, PolyWarp computes its cryptographic Content Identifier (CID) and announces it to the peer-to-peer swarm.
+- **Zero-Stutter Playback:** When Node B encounters the same code block on matching hardware, it pre-fetches the verified native binary ahead of time and hot-patches it directly into executable memory with **zero compilation overhead**.
 
 ---
 
 ## ⚡ Core Pillars
 
 1. **Zero Runtime CPU Emulation:**
-   - Decodes foreign instructions (ARM64/RISC-V) directly into micro-op Intermediate Representation (IR).
+   - Translates foreign instructions (ARM64/RISC-V) directly into micro-op Intermediate Representation (IR).
    - Generates and writes raw x86_64 machine code directly into executable pages (`mmap` with `PROT_EXEC`), achieving native execution speed.
 
-2. **Distributed Shader Vault (P2P Mesh):**
+2. **P2P JIT & Distributed Shader Swarm:**
    - Intercepts DirectX 9/11 HLSL shader bytecode.
    - Hashes shaders to deterministic Content Identifiers (CIDs).
-   - Pre-compiled GPU shaders are shared across the peer swarm over IPFS, eliminating shader compilation stutter during gaming.
+   - Pre-compiled GPU shaders are shared across the peer swarm over P2P/IPFS, eliminating shader compilation stutter during gameplay.
 
-3. **Deterministic Content-Addressing:**
-   - Every compiled block is immutable, tamper-resistant, and instantly verifiable by hash before memory injection.
+3. **Multi-Tier Fallback Hierarchy:**
+   - **Tier 1 (L1 Cache):** Instant 1.2–15 ns local memory lookup.
+   - **Tier 2 (Airgapped BLE/Radio):** Micro-shard synchronization via TrackOn BLE (0x4C5D) and LoRa.
+   - **Tier 3 (P2P Swarm):** Background BitTorrent/IPFS DHT discovery for full binary blocks.
 
 ---
 
