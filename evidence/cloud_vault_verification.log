@@ -1,0 +1,9 @@
+[Client] Target Vault Server: http://16.176.42.41:7470
+[Client] Emitted AArch64 block size: 12 bytes, SHA-256 CID: df3fa3df513816d90b0c7bdf9f9d6cd78a084933fb29940cab3db74816ef4d70
+[Client] Upload Response Code: 201
+[Client] Upload Response Body: {"status": "stored", "cid": "df3fa3df513816d90b0c7bdf9f9d6cd78a084933fb29940cab3db74816ef4d70", "bytes": 12}
+[Client] Query Response Code: 200
+[Client] Query Retrieved 12 bytes
+[Client] Bit-Exact Verification: True
+39.43.170.205 - - [25/Oct/2026 18:42:54] "POST /v1/artifact/df3fa3df513816d90b0c7bdf9f9d6cd78a084933fb29940cab3db74816ef4d70 HTTP/1.1" 201 -
+39.43.170.205 - - [25/Oct/2026 18:42:55] "GET /v1/artifact/df3fa3df513816d90b0c7bdf9f9d6cd78a084933fb29940cab3db74816ef4d70 HTTP/1.1" 200 -

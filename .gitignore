@@ -20,6 +20,7 @@ compile_commands.json
 *.cache
 *.db
 *.log
+!evidence/*.log
 ipfs_cache/
 shader_cache/
 

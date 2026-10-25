@@ -1,0 +1,4 @@
+[Local-JIT ARM64] Initializing AArch64 JIT execution harness on AWS Graviton...
+[Local-JIT ARM64] Executed emitted AArch64 machine code!
+[Local-JIT ARM64] Equation: (10 * 5) + 42 = 92
+[Local-JIT ARM64] [SUCCESS] Native ARM64 Graviton execution verified 100% bit-exact!

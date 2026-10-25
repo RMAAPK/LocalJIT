@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: local-jit-vault
+    env: python
+    buildCommand: ""
+    startCommand: python3 server/server.py
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: STORAGE_PATH
+        value: /var/data/vault
+    disk:
+      name: vault-data
+      mountPath: /var/data/vault
+      sizeGB: 10

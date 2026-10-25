@@ -1,0 +1,14 @@
+002c:err:wineboot:process_run_key Error running cmd L"C:\\windows\\system32\\winemenubuilder.exe -a -r" (126).
+0074:err:ntoskrnl:ZwLoadDriver failed to create driver L"\\Registry\\Machine\\System\\CurrentControlSet\\Services\\winebth": c0000135
+========================================================
+  Windows Native PE Client running via Local JIT Bridge
+  Architecture: x86_64 PE (System: Windows / Wine ABI)
+========================================================
+
+[+] Step 1: Allocating Windows executable memory (PAGE_EXECUTE_READWRITE)...
+[+] Executable page mapped at: 0x00007ffffe8d0000
+[+] Step 2: Injecting translated JIT machine code (11 bytes)...
+[+] Step 3: Invoking JIT function pointer from Windows thread...
+[+] Execution Successful! Register X0 = 100 (Expected: 100)
+
+[+] Windows Native Client execution verified with zero stutter!

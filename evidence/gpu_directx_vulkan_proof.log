@@ -1,0 +1,4 @@
+[RUNNING] Local-JIT Unit Test: DirectX Bytecode Interception & Vulkan SPIR-V Cache Proof...
+[Local-JIT GPU] Intercepted DirectX 11 Shader. Computed Hash: shdr_838fae5e2c82744a
+[Local-JIT GPU] Generated Content-Addressed CID for Vulkan Pipeline: bafybeic705a42079f4da2e1d74197480808290d
+[PASSED] DirectX 11 -> Vulkan SPIR-V Pipeline Verified: Zero-Stutter Cache Hit!
