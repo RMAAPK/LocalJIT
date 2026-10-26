@@ -252,5 +252,35 @@ Local JIT has been empirically benchmarked and proven across bare-metal x86_64, 
 
 ---
 
+
+---
+
+## ⚡ Autonomous 1-Command Loader: `localjit-run`
+
+Local-JIT provides a standalone, zero-permission execution wrapper (`localjit-run`) that transparently hooks into any game, emulator, or Wine/Proton prefix without modifying or waiting for upstream pull requests.
+
+```bash
+# Wrap any Wine/Windows application:
+localjit-run wine Aspire.exe
+
+# Wrap any native Linux game or emulator (PCSX2, RPCS3, Ryujinx, Box64):
+localjit-run ./cyberpunk2077
+
+# Inside Steam Launch Options:
+localjit-run %command%
+```
+
+### What `localjit-run` Automates Behind the Scenes:
+1. **Volatile RAM-Disk In-Memory L1 Cache**:
+   - Spawns and manages `/dev/shm/localjit_cache` directly in high-speed physical RAM.
+   - Automatically directs `DXVK_SHADER_CACHE_PATH`, `DXVK_SHARED_CACHE_PATH`, `VKD3D_SHADER_CACHE_PATH`, and `MESA_SHADER_CACHE_DIR` to shared memory, completely eliminating SSD/HDD IO hitching.
+2. **Deterministic Cloud Vault Sync**:
+   - Injects `LOCAL_JIT_VAULT=https://server-1f75.onrender.com` to pull and push pre-compiled SPIR-V and AArch64/x86 translation artifacts on demand.
+3. **Async Graphics Pipeline Execution**:
+   - Automatically engages `DXVK_ASYNC=1`, `DXVK_STATE_CACHE=1`, and `DXVK_GPL=1` (Graphics Pipeline Library).
+4. **Native Wine/Windows DLL Interception**:
+   - Forces `WINEDLLOVERRIDES="localjit_hook=n,b"` to seamlessly attach the `localjit_hook.dll` runtime accelerator into Windows executables.
+
+
 ## 📜 License
 Local JIT is open source software released under the [MIT License](LICENSE) by RMAA Holdings & Contributors.
