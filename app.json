@@ -1,7 +1,7 @@
 {
   "name": "Local JIT Vault Server",
   "description": "Zero-Knowledge, Content-Addressed Peer-to-Peer JIT & Shader Cache Vault Server",
-  "repository": "https://github.com/RMAAPK/Local-JIT",
+  "repository": "https://github.com/RMAAPK/LJIT",
   "logo": "https://raw.githubusercontent.com/RMAAPK/Local-JIT/main/docs/logo.png",
   "keywords": ["jit", "cache", "shader", "zero-knowledge", "p2p", "rmaa"],
   "stack": "container",

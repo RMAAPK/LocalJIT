@@ -16,3 +16,4 @@ Local-JIT bridges Box64/FEX translation pages with a content-addressed storage l
    - Rather than invoking the software dynarec to walk bytecode trees, Box64 loads bit-exact native ARM64 blocks directly from Local-JIT RAM.
 3. **Verified Zero-Knowledge Safety**:
    - Blocks are validated bit-exact using execution test vectors, preserving hardware exception correctness across architectures.
+

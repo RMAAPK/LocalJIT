@@ -10,9 +10,9 @@
 
 Deploy your private, zero-knowledge Local JIT Vault server in seconds:
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/RMAAPK/Local-JIT)
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/RMAAPK/Local-JIT)
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/new?template=https://github.com/RMAAPK/Local-JIT)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/RMAAPK/LJIT)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/RMAAPK/LJIT)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/new?template=https://github.com/RMAAPK/LJIT)
 
 **Local JIT** (maintained by **RMAA Holdings**) is an open-source, self-hostable, and peer-to-peer compilation cache and dynamic execution engine. It crowdsources pre-compiled CPU translation blocks and GPU shader pipelines across private servers and local networks, eliminating runtime compilation stutter for emulators, gaming on Linux, and cross-architecture workloads.
 
