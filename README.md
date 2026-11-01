@@ -1,5 +1,8 @@
 # Local JIT: Self-Hosted & Peer-to-Peer Compilation Cache
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23859063.svg)](https://doi.org/10.5281/zenodo.23859063)
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Organization: RMAA Holdings](https://img.shields.io/badge/Organization-RMAA%20Holdings-purple.svg)](https://github.com/RMAAPK)
 [![Target: x86__64](https://img.shields.io/badge/Target-Intel%20x86__64%20Bare--Metal-red.svg)]()
